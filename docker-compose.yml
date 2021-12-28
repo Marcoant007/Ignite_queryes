@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+
+  playerdb:
+    environment: 
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=queries_challenge
+      - POSTGRES_USER=postgres
+    ports: 
+      - "5432:5432"
+    image: postgres:10-alpine
+    volumes: 
+      - db-data:/var/lib/postgresql/data
+
+volumes: 
+  db-data:
